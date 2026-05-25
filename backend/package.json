@@ -1,0 +1,15 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "auth": "cd authService && npm run dev",
+    "chat": "cd chatService && npm run dev",
+    "gateway": "cd getway && npm run dev",
+    "client": "cd client && npm run dev",
+    "dev": "concurrently \"npm run auth\" \"npm run chat\" \"npm run gateway\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
