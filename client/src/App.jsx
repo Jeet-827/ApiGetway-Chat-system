@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Login from './page/Login'
 import Signup from './page/Signup'
 import Chat from './page/chat'
+import ProtectRoute from './components/ProtectRoute'
 
 export default function App() {
   return (
@@ -9,7 +10,11 @@ export default function App() {
       <Routes>
         <Route path='/' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
-        <Route path='/chat' element={<Chat />} />
+        <Route path='/chat' element={
+          <ProtectRoute>
+            <Chat />
+          </ProtectRoute>
+        } />
       </Routes>
     </BrowserRouter>
   )}
